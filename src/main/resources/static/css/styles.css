@@ -1,0 +1,100 @@
+h1 {
+	text-align: center;
+	color: #FCFDF2;
+	font-family: helvetica;
+}
+
+body {
+	background-color: #FFE9B1;
+	height: 100%;
+	width: 100%;
+
+}
+
+table, td{
+	border: 10px, solid;
+	border-color: #3B3486;
+	color: #82b74b;
+	padding: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: helvetica;
+	color: #FCFDF2;
+}
+
+.form {
+	font-family: helvetica;
+	color: #FCFDF2;
+	background-color: #3B3486;
+	width: 400px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	border-style: outset;
+	
+}
+
+.formdiv {
+	font-family: helvetica;
+	color: #3B3486;
+	background-color: #FFE9B1;
+}
+
+.form-control {
+	background-color: #FFE9B1;
+	color: #3B3486;
+	font-family: helvetica;
+	
+}
+
+.dropdown {
+	width: 150px;
+}
+
+a {
+	color: #FCFDF2;
+	font-family: helvetica;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+a:hover {
+	color: #FFE9B1;
+}
+
+th {
+	border: 1px solid;
+	border-color: black;
+	padding: 10px;
+	background-color: #3B3486;
+	font-family: helvetica;
+	color: #FCFDF2;
+}
+
+tr:nth-child(even){
+	background-color: #7743DB;
+}
+
+tr:nth-child(odd) {
+	background-color: #3B3486;
+}
+
+.bar {
+	margin: auto;
+	width: 800px;
+	text-align: center;
+	background-color: #3B3486;
+	border-style: outset;
+	border-color: #7743DB;
+	color: #FCFDF2;
+	font-family: helvetica;
+}
+
+p {
+	color: #FCFDF2;
+	font-family: helvetica;
+}

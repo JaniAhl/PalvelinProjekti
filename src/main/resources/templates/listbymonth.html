@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>List by month</title>
+<link rel="stylesheet" href="/css/styles.css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="bar">
+	<h1 th:text="${ShiftMonth.shiftMonth}">List by month</h1>
+	<a href="/hourlist" class="btn btn-info">Back</a> <!--  Back to hourlist -->
+</div>
+	<!-- Lists the shifts by the chosen month -->
+	<table> 
+		<tr>
+			<th>Id</th>
+			<th>Day</th>
+			<th>Month</th>
+			<th>Shift start</th>
+			<th>Shift end</th>
+			<th>Total</th>
+		</tr>
+		
+		<tr th:each="shiftHour : ${ShiftMonth.hours}" >
+		
+			<td th:text="${shiftHour.shiftId}"></td>
+			<td th:text="${shiftHour.shiftDay}"></td>
+			<td th:text="${shiftHour.ShiftMonth.shiftMonth}"></td>
+			<td th:text="${shiftHour.shiftStart}"></td>
+			<td th:text="${shiftHour.shiftEnd}"></td>
+			<td th:text=  "${shiftHour.shiftEnd} - ${shiftHour.shiftStart}"></td> <!-- Counts the total hours, substracting shiftEnd from shiftStart -->
+
+		</tr>
+	</table>
+</body>
+</html>

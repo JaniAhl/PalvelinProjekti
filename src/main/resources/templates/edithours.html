@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+	<title>Workhours</title>
+	<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+	<link type="text/css" rel="stylesheet" href="/css/styles.css"/>
+</head>
+
+<body>
+	<div class=bar>
+	<h1>Edit hours</h1>
+	</div>
+	<div>
+		<form class="form" th:object="${shiftHour}" th:action="@{/save}" action="#" method="post">
+			<label for="id"></label>
+			<input type="hidden" id="id" th:field="*{shiftId}" readonly="readonly"/>
+			
+			<div>
+		  	<label for="Name">Day</label>
+			<input class="form-control" type="text" id="day" th:field="*{shiftDay}" />
+			</div>
+			<div style="clear: both; display: block; height: 10px;"></div> <!--  Div to create some space between boxes -->
+			
+			<div class="dropdown">
+			<label for="monthlist">Month</label>
+			<select id="monthlist" th:field ="*{ShiftMonth}" class = "form-control">
+				<option th:each="ShiftMonth: ${ShiftMonths}" th:value="${ShiftMonth.shiftMonthId}" th:text="${ShiftMonth.shiftMonth}"></option>  <!--  dropdownmenu for changing month -->
+			</select>
+			</div>
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<div>
+		  	<label for="Type">Shift start</label>
+			<input class="form-control" type="text" id="start" th:field="*{shiftStart}" />
+			</div>
+			<div style="clear: both; display: block; height: 10px;"></div>
+			<div>
+			<label for="Description">Shift end</label>
+			<input class="form-control"  type="text" id="end" th:field="*{shiftEnd}" />
+			</div>
+			<div style="clear: both; display: block; height: 10px;"></div>
+			
+			<input type="submit" value="Save" class="a"></input> <!--  Save button to save edit and back to hourlist-->
+			<a href="/hourlist" class="btn btn-info">Back</a> <!--  Back button back to hourlist  -->
+			
+		</form>
+	</div>
+</body>
+
+</html>

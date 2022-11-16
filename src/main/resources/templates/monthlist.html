@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Months</title>
+<link rel="stylesheet" href="/css/styles.css"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="bar">
+	<h1>Months</h1>
+	<h2><a href="/index" class="btn btn-outline-primary">Homepage</a> <!--  To index -->
+	<a href="/hourlist" class="btn btn-info">Hours</a> <!--  To hourlist  -->
+	</h2>
+	</div>
+	
+	<!-- Shows all the months (Jan - Dec) -->
+	<table class="table table-striped">
+		<tr>
+			<th>Id</th>
+			<th>Month</th>
+		</tr>
+
+		<tr th:each="ShiftMonth : ${ShiftMonth}">
+			<td th:text="${ShiftMonth.shiftMonthId}"></td>
+			<td th:text="${ShiftMonth.shiftMonth}"></td>
+		</tr>
+	</table>
+</body>
+</html>

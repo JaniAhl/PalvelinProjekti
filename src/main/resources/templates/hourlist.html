@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Workhours</title>
+<link rel="stylesheet" href="/css/styles.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<div class="bar">
+	<h1>Workhours</h1>
+	<h2>
+	<a href="/index" class="btn btn-outline-primary">Home page</a>
+	<a href="/addhours" class="btn btn-outline-success">Add hours</a>
+	<a href="/monthlist" class="btn btn-outline-success">Months</a>
+	<div style="padding:20px 0">
+		<form th:action="@{/logout}" method="post">
+			<input type="submit" value="Sign Out" class="btn btn-sm btn-danger"/>
+		</form>
+	</div>
+	</h2>
+	</div>
+	<table class="table table-striped">
+		<tr>
+			<th>Day</th>
+			<th>Month</th>
+			<th>Shift start</th>
+			<th>Shift end</th>
+			<th>Hours</th>
+			<th>Delete</th>
+			<th>Edit</th>
+		</tr>
+
+		<tr th:each="shiftHour : ${shiftHour}" >
+			<td th:text="${shiftHour.shiftDay}"></td>
+			<td> <a th:text="${shiftHour.ShiftMonth.shiftMonth}" th:href="@{/listbymonth/{id}(id=${shiftHour.shiftMonth.shiftMonthId})}"></a></td>
+			<td th:text="${shiftHour.shiftStart}"></td>
+			<td th:text="${shiftHour.shiftEnd}"></td>
+			<td th:text=  "${shiftHour.shiftEnd} - ${shiftHour.shiftStart}"></td> <!-- Counts the total hours, substracting shiftEnd from shiftStart -->
+			<td><a th:href="@{/delete/{id}(id=${shiftHour.shiftId})}" class="btn btn-outline-danger">Delete</a></td>
+			<td><a th:href="@{/edit/{id}(id=${shiftHour.shiftId})}" class="btn btn-outline-info">Edit</a></td>
+		</tr>
+	</table>
+	
+
+</body>
+</html>
